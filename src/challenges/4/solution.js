@@ -1,5 +1,3 @@
-// A regex that matches all characters between parentheses excluding the parentheses themselves
-
 function decode(message) {
   const matches = Array.from(message.matchAll(/\([^()]*\)/g)).map((m) => ({
     match: m[0],
