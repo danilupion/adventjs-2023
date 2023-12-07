@@ -12,6 +12,7 @@
         "4": "node src/challenges/4/solution.js",
         "5": "node src/challenges/5/solution.js",
         "6": "node src/challenges/6/solution.js",
+        "7": "node src/challenges/7/solution.js",
         "prettify": "prettier --write  \"./src/**/*.{js,json}\"",
         "lint": "eslint -c .eslintrc.cjs 'src/**/*.js'",
         "lint:fix": "eslint -c .eslintrc.cjs 'src/**/*.js' --fix",
