@@ -1,26 +1,9 @@
 function maxDistance(movements) {
-  const scores = {
-    ">": 1,
-    "<": -1,
-    "*": 0,
-  };
+  const left = movements.split("<").length - 1;
+  const right = movements.split(">").length - 1;
+  const either = movements.split("*").length - 1;
 
-  return Math.max(
-    ...Array.from(movements.matchAll(/(>+|<+|\*+)/g))
-      .reduce(
-        (acc, [block]) => {
-          const score = scores[block[0]];
-          return score
-            ? acc.map((distance) => distance + block.length * score)
-            : [
-                ...acc.map((distance) => distance + block.length),
-                ...acc.map((distance) => distance - block.length),
-              ];
-        },
-        [0],
-      )
-      .map(Math.abs),
-  );
+  return Math.abs(left - right) + either;
 }
 
 const movements = ">>*<";
